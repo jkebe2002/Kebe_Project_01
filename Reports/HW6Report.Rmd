@@ -14,11 +14,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Data Visualization
 
 ```{r pressure, echo=FALSE}
-leadData <- read.csv("~/Documents/GitHub/Kebe_Project_01/DataRaw/lead-iq-01.csv")
+leadData <- read.csv("~/Documents/GitHub/Kebe_Project_01/DataProcessed/lead-iq-01_processed.csv")
 boxplot(IQ~Smelter, data = leadData)
 ```
 
-Here we used a boxplot to visualize the IQ's for the "Near" group and the "Far Group". Notably, the Far group has an outlier of an individual with extraordinary IQ. The outlier makes comparing the groups visually difficult. \
+Here we used a boxplot to visualize the IQ's for the "Near" group and the "Far Group". The Far group's IQ visually seems to be significantly better than the Near group. \
 ## Means by Group
 ```{r means}
 avg_iq_near <- mean(leadData[leadData$Smelter == "Near",]$IQ)
@@ -52,7 +52,7 @@ This table provides summary statistics for our two groups' IQs. We have reported
 
 ``` r
 #load data
-leadData <- read.csv("~/Documents/GitHub/Kebe_Project_01/DataRaw/lead-iq-01.csv")
+leadData <- read.csv("~/Documents/GitHub/Kebe_Project_01/DataProcessed/lead-iq-01_processed.csv")
 
 #Calculate averages
 avg_iq_near <- mean(leadData[leadData$Smelter == "Near",]$IQ)
