@@ -15,12 +15,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r pressure, echo=FALSE}
 leadData <- read.csv("~/Documents/GitHub/Kebe_Project_01/DataProcessed/lead-iq-01_processed.csv")
-boxplot(IQ~Smelter, data = leadData)
+boxplot(IQ~Smelter, data = leadData, xlab = "Relative Distance to Smelter")
 ```
 
 Here we used a boxplot to visualize the IQ's for the "Near" group and the "Far Group". The Far group's IQ visually seems to be significantly better than the Near group. \
+
 ## Means by Group
-```{r means}
+
+```{r means, echo = FALSE}
 avg_iq_near <- mean(leadData[leadData$Smelter == "Near",]$IQ)
 avg_iq_near
 
@@ -28,6 +30,7 @@ avg_iq_far <- mean(leadData[leadData$Smelter == "Far",]$IQ)
 avg_iq_far
 ```
 Here we have our mean IQs for the two groups, "Near" and "Far" respectively.
+Our mean IQs for the two groups were `r mean(leadData[leadData$Smelter == "Near",]$IQ)` for the near group and `r mean(leadData[leadData$Smelter == "Far",]$IQ)` for the far group.
 
 ## Table
 
